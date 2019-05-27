@@ -13,7 +13,6 @@ import { DeleteBookRecordComponent } from './delete-book-record/delete-book-reco
 import { UpdateBookRecordComponent } from './update-book-record/update-book-record.component';
 import { ChartBookCategoryComponent } from './chart-book-category/chart-book-category.component';
 import { ChartsModule } from 'ng2-charts';
-import { AlertsComponent } from './alerts/alerts.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -29,7 +28,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DeleteBookRecordComponent,
     UpdateBookRecordComponent,
     ChartBookCategoryComponent,
-    AlertsComponent,
   ],
   imports: [
     BrowserModule,
