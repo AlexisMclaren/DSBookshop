@@ -1,0 +1,26 @@
+<div class="content-disply-area">
+    <div *ngIf="search" class="clr-row">
+            <div *ngFor = "let s of search" class="clr-col-lg-4 clr-col-md-2 clr-col-sm-6 clr-col-12">
+                
+                    <div class="card">
+                        <div class="card-header">
+                        {{s.title}} 
+                        </div>
+                        <div class="card-block">
+                            <div class="card-title">
+                                Description
+                            </div>
+                            <div class="card-text">
+                                {{s.description}}
+                            </div>
+                        </div>
+                    </div>
+            </div> 
+    </div>
+    <div *ngIf="search">
+        <button type="button" class="btn btn-outline" (click)="removeSearch()">
+                Delete search results
+        </button>
+        <hr/>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="content-disply-area">
+    <div class="clr-row">
+        <h2>Books</h2>
+    </div>
+</div>  
+<div class="content-disply-area"> 
+    <div class="clr-row">
+        <clr-select-container>
+            <label>Book Category List</label>
+            <select (change) = "selectChangeHandler($event)" clrSelect name="options">
+                <option value="All Books">All Books</option>
+                <option *ngFor="let cat of categories" value={{cat.category1}}>{{cat.category1}}</option>
+            </select>
+        </clr-select-container>
+    </div>
+</div> 
+<div class="content-disply-area"> 
+    <div class="clr-row">
+        <h3>{{selectedCategory}}</h3>
+    </div>
+</div>
+<div class="content-disply-area"> 
+    <div *ngIf="books.length" class="clr-row">
+
+        <div *ngFor = "let book of books" class="clr-col-lg-4 clr-col-md-2 clr-col-sm-6 clr-col-12">
+            
+                <div class="card">
+                    <div class="card-header">
+                    {{book.title}}
+                    </div>
+                    <div class="card-block">
+                        <div class="card-title">
+                            Description
+                        </div>
+                        <div class="card-text">
+                            {{book.description}}
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+
+    </div>
+</div>
+<div class="content-disply-area"> 
+    <div *ngIf="booksByCat.length" class="clr-row">
+
+            <div *ngFor = "let book of booksByCat" class="clr-col-lg-4 clr-col-md-2 clr-col-sm-6 clr-col-12">
+                
+                    <div class="card">
+                        <div class="card-header">
+                        {{book.title}} 
+                        </div>
+                        <div class="card-block">
+                            <div class="card-title">
+                                Description
+                            </div>
+                            <div class="card-text">
+                                {{book.description}}
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        
+    </div>
+</div>
+

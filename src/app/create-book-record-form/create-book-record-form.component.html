@@ -1,0 +1,36 @@
+<div class="content-disply-area">
+  <h2>Create a book entry</h2>
+    
+  <form (ngSubmit)="submtFunc()" class="clr-form">  
+      <clr-select-container>
+          <label>Book Category List</label>
+          <select required #options="ngModel"
+           (change) = "selectChangeHandler($event)" clrSelect name="options" [(ngModel)]="bookToCreate.categoryId">
+              <option></option>
+              <option *ngFor="let cat of catbookList" value={{cat.categoryId}}>Category: {{cat.category1}} Id: {{cat.categoryId}}</option>
+          </select>
+          <clr-control-error>You need to select a category</clr-control-error>
+        </clr-select-container>
+    
+      <clr-input-container>
+        <label>Title</label>
+        <input clrInput type="text" name="title" [(ngModel)]="bookToCreate.title" required />
+        <clr-control-error>You need to enter a book title</clr-control-error>
+      </clr-input-container>
+
+      <clr-input-container>
+          <label>Book author</label>
+          <input clrInput type="text" name="author" [(ngModel)]="bookToCreate.author" required/>
+          <clr-control-error>You need to enter the author of the book</clr-control-error>
+      </clr-input-container>
+
+      <clr-textarea-container>
+          <label>Description</label>
+          <textarea placeholder="Write a description of a book" clrTextarea name="description" [(ngModel)]="bookToCreate.description" required></textarea>
+          <clr-control-error>You need to enter a description of the book</clr-control-error>
+      </clr-textarea-container>
+
+      <button type="reset" (click)="restObj()" class="btn btn-outline">Reset</button>
+      <button type="submit" class="btn btn-outline">Submit</button>
+  </form>
+</div>
